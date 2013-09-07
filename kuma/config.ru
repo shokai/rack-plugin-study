@@ -1,8 +1,8 @@
 require 'rack'
 require 'sinatra'
-$:.unshift File.dirname(__FILE__)
-require 'kuma_response_filter'
-require 'main'
+require File.expand_path 'kuma_response_filter', File.dirname(__FILE__)
 use KumaResponseFilter
+
+require File.expand_path 'main', File.dirname(__FILE__)
 
 run Sinatra::Application
